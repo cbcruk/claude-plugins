@@ -1,0 +1,17 @@
+{
+  "name": "cbcruk",
+  "owner": {
+    "name": "Eunsoo Lee",
+    "email": "cbcruk@gmail.com"
+  },
+  "metadata": {
+    "description": "Personal Claude Code plugins"
+  },
+  "plugins": [
+    {
+      "name": "ts-conventions",
+      "source": "./ts-conventions",
+      "description": "TypeScript documentation and code style conventions: installs the rule files into a target repo, and audits existing JSDoc against them."
+    }
+  ]
+}

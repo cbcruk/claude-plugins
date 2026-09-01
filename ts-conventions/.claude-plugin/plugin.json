@@ -1,0 +1,9 @@
+{
+  "name": "ts-conventions",
+  "description": "TypeScript documentation and code style conventions: installs the rule files into a target repo, and audits existing JSDoc against them.",
+  "author": {
+    "name": "Eunsoo Lee",
+    "email": "cbcruk@gmail.com"
+  },
+  "keywords": ["typescript", "jsdoc", "conventions"]
+}
