@@ -100,7 +100,7 @@ Then apply the gate, sized to the risk:
 
 There used to be: an AST tool (`effect-xray.mjs`) that mapped each effect's wiring.
 It is **archived** in the repo this skill came from —
-[`cbcruk/effect-evidence`](https://github.com/cbcruk/effect-evidence/tree/main/archive).
+[`cbcruk/effect-xray`](https://github.com/cbcruk/effect-xray/tree/main/archive).
 It added no correctness over reading the source, and three of its signals were
 worse than the alternatives (`grep`, `exhaustive-deps`, and just reading). Do not
 go looking for it; the three steps above are the whole procedure.
