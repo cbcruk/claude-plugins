@@ -17,6 +17,11 @@
       "name": "codebase-recon",
       "source": "./codebase-recon",
       "description": "Diagnose an unfamiliar or legacy codebase from its git history before reading source files, and produce a prioritized reading list."
+    },
+    {
+      "name": "effect-xray",
+      "source": "./effect-xray",
+      "description": "Behavior-preserving useEffect refactor for React/TSX, run as a gate: every removal carries an explicit preservation claim, and risky ones are adversarially falsified before they ship."
     }
   ]
 }
