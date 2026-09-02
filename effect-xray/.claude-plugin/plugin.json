@@ -1,0 +1,9 @@
+{
+  "name": "effect-xray",
+  "description": "Behavior-preserving useEffect refactor for React/TSX, run as a gate: every removal carries an explicit preservation claim, and risky ones are adversarially falsified before they ship.",
+  "author": {
+    "name": "Eunsoo Lee",
+    "email": "cbcruk@gmail.com"
+  },
+  "keywords": ["react", "useeffect", "refactor", "typescript"]
+}

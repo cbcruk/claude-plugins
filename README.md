@@ -9,6 +9,7 @@ available. Install each plugin you want by name.
 claude plugin marketplace add cbcruk/claude-plugins
 claude plugin install ts-conventions@cbcruk
 claude plugin install codebase-recon@cbcruk
+claude plugin install effect-xray@cbcruk
 ```
 
 ## Plugins
@@ -17,6 +18,7 @@ claude plugin install codebase-recon@cbcruk
 | --- | --- |
 | `ts-conventions` | Installs the JSDoc and code-style rule files into a repo, and audits existing JSDoc against them. |
 | `codebase-recon` | Mines git history for churn, bug clustering, bus factor, and velocity, then hands back a prioritized reading list. |
+| `effect-xray` | Refactors unnecessary `useEffect`s as a gate — each removal states a preservation claim, and a read-only reviewer tries to falsify it. |
 
 ## Layout
 
@@ -32,6 +34,15 @@ codebase-recon/
 ├── .claude-plugin/plugin.json
 └── skills/
     └── codebase-recon/SKILL.md
+effect-xray/
+├── .claude-plugin/plugin.json
+├── agents/                       # subagents the skill dispatches
+│   ├── effect-refactor-worker.md
+│   └── effect-adversarial-reviewer.md
+└── skills/
+    └── effect-xray-refactor/
+        ├── SKILL.md
+        └── references/replacement-patterns.md
 ```
 
 Component directories (`skills/`, `agents/`, `hooks/`) belong at the plugin
@@ -53,6 +64,7 @@ step, discovered in place rather than copied to the cache.
 ```bash
 claude plugin validate ./ts-conventions
 claude plugin validate ./codebase-recon
+claude plugin validate ./effect-xray
 ```
 
 Do not add `--strict` in CI while the no-version strategy above is in effect —
@@ -70,6 +82,11 @@ descriptions it will never match.
 
 `claude plugin details <name>` prints the always-on and on-invoke token cost
 separately — read those numbers before deciding to split.
+
+Agent descriptions are always-on too, one level deeper than skills: an agent a
+skill only dispatches on risky cases still sits in context in sessions where the
+skill never fires. `effect-xray` ships two, so it costs three descriptions rather
+than one — keep agent descriptions tighter than skill ones.
 
 Rules that must apply on **every** edit do not belong in a skill body at all;
 a trigger that only usually matches leaks. Ship them as rule files and let a
