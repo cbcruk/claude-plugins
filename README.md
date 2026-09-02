@@ -8,6 +8,7 @@ available. Install each plugin you want by name.
 ```bash
 claude plugin marketplace add cbcruk/claude-plugins
 claude plugin install ts-conventions@cbcruk
+claude plugin install codebase-recon@cbcruk
 ```
 
 ## Plugins
@@ -15,6 +16,7 @@ claude plugin install ts-conventions@cbcruk
 | Plugin | What it does |
 | --- | --- |
 | `ts-conventions` | Installs the JSDoc and code-style rule files into a repo, and audits existing JSDoc against them. |
+| `codebase-recon` | Mines git history for churn, bug clustering, bus factor, and velocity, then hands back a prioritized reading list. |
 
 ## Layout
 
@@ -26,6 +28,10 @@ ts-conventions/
 └── skills/
     ├── ts-rules-setup/SKILL.md
     └── jsdoc-audit/SKILL.md
+codebase-recon/
+├── .claude-plugin/plugin.json
+└── skills/
+    └── codebase-recon/SKILL.md
 ```
 
 Component directories (`skills/`, `agents/`, `hooks/`) belong at the plugin
@@ -46,6 +52,7 @@ step, discovered in place rather than copied to the cache.
 
 ```bash
 claude plugin validate ./ts-conventions
+claude plugin validate ./codebase-recon
 ```
 
 Do not add `--strict` in CI while the no-version strategy above is in effect —
