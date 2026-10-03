@@ -22,6 +22,11 @@
       "name": "effect-xray",
       "source": "./effect-xray",
       "description": "Behavior-preserving useEffect refactor for React/TSX, run as a gate: every removal carries an explicit preservation claim, and risky ones are adversarially falsified before they ship."
+    },
+    {
+      "name": "table-driven-tuning",
+      "source": "./table-driven-tuning",
+      "description": "Move game balance out of code into data tables, and close the tuning loop with a validator, seeded headless simulation, bot metrics, and a committed baseline."
     }
   ]
 }
