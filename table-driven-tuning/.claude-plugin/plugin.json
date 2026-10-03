@@ -1,0 +1,9 @@
+{
+  "name": "table-driven-tuning",
+  "description": "Move game balance out of code and into data tables, then close the tuning loop with a validator, a seeded headless simulator, bot-based metrics, and a committed baseline.",
+  "author": {
+    "name": "Eunsoo Lee",
+    "email": "cbcruk@gmail.com"
+  },
+  "keywords": ["game-dev", "data-driven", "simulation", "balance", "validation"]
+}

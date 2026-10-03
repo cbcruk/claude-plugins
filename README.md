@@ -10,6 +10,7 @@ claude plugin marketplace add cbcruk/claude-plugins
 claude plugin install ts-conventions@cbcruk
 claude plugin install codebase-recon@cbcruk
 claude plugin install effect-xray@cbcruk
+claude plugin install table-driven-tuning@cbcruk
 ```
 
 ## Plugins
@@ -19,6 +20,7 @@ claude plugin install effect-xray@cbcruk
 | `ts-conventions` | Installs the JSDoc and code-style rule files into a repo, and audits existing JSDoc against them. |
 | `codebase-recon` | Mines git history for churn, bug clustering, bus factor, and velocity, then hands back a prioritized reading list. |
 | `effect-xray` | Refactors unnecessary `useEffect`s as a gate — each removal states a preservation claim, and a read-only reviewer tries to falsify it. |
+| `table-driven-tuning` | Splits game numbers into Shape / Knob / Content tables, installs a no-magic-numbers rule, and builds the validate → sim → metrics-diff tuning loop. |
 
 ## Layout
 
@@ -43,6 +45,13 @@ effect-xray/
     └── effect-xray-refactor/
         ├── SKILL.md
         └── references/replacement-patterns.md
+table-driven-tuning/
+├── .claude-plugin/plugin.json
+├── rules/table-driven.md         # always-on rule the skill installs (recipe 13)
+└── skills/
+    └── table-driven-tuning/
+        ├── SKILL.md
+        └── references/metrics.md
 ```
 
 Component directories (`skills/`, `agents/`, `hooks/`) belong at the plugin
@@ -65,6 +74,7 @@ step, discovered in place rather than copied to the cache.
 claude plugin validate ./ts-conventions
 claude plugin validate ./codebase-recon
 claude plugin validate ./effect-xray
+claude plugin validate ./table-driven-tuning
 ```
 
 Do not add `--strict` in CI while the no-version strategy above is in effect —
