@@ -1,0 +1,9 @@
+{
+  "name": "pike-rules",
+  "description": "Rob Pike's 5 Rules of Programming as an always-on rule file: measure before optimizing, keep algorithms and data structures simple, and design the data first.",
+  "author": {
+    "name": "Eunsoo Lee",
+    "email": "cbcruk@gmail.com"
+  },
+  "keywords": ["performance", "simplicity", "data-structures", "conventions"]
+}
