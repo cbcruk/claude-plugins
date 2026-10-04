@@ -27,6 +27,11 @@
       "name": "table-driven-tuning",
       "source": "./table-driven-tuning",
       "description": "Move game balance out of code into data tables, and close the tuning loop with a validator, seeded headless simulation, bot metrics, and a committed baseline."
+    },
+    {
+      "name": "pike-rules",
+      "source": "./pike-rules",
+      "description": "Rob Pike's 5 Rules of Programming as an always-on rule file: measure before optimizing, keep algorithms and data structures simple, and design the data first."
     }
   ]
 }

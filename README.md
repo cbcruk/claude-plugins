@@ -11,6 +11,7 @@ claude plugin install ts-conventions@cbcruk
 claude plugin install codebase-recon@cbcruk
 claude plugin install effect-xray@cbcruk
 claude plugin install table-driven-tuning@cbcruk
+claude plugin install pike-rules@cbcruk
 ```
 
 ## Plugins
@@ -21,6 +22,7 @@ claude plugin install table-driven-tuning@cbcruk
 | `codebase-recon` | Mines git history for churn, bug clustering, bus factor, and velocity, then hands back a prioritized reading list. |
 | `effect-xray` | Refactors unnecessary `useEffect`s as a gate — each removal states a preservation claim, and a read-only reviewer tries to falsify it. |
 | `table-driven-tuning` | Splits game numbers into Shape / Knob / Content tables, installs a no-magic-numbers rule, and builds the validate → sim → metrics-diff tuning loop. |
+| `pike-rules` | Installs Rob Pike's 5 Rules of Programming — measure before optimizing, simple algorithms, data first — as an always-on rule. |
 
 ## Layout
 
@@ -52,6 +54,11 @@ table-driven-tuning/
     └── table-driven-tuning/
         ├── SKILL.md
         └── references/metrics.md
+pike-rules/
+├── .claude-plugin/plugin.json
+├── rules/pike-rules.md           # always-on rule the setup skill installs
+└── skills/
+    └── pike-rules-setup/SKILL.md
 ```
 
 Component directories (`skills/`, `agents/`, `hooks/`) belong at the plugin
@@ -75,6 +82,7 @@ claude plugin validate ./ts-conventions
 claude plugin validate ./codebase-recon
 claude plugin validate ./effect-xray
 claude plugin validate ./table-driven-tuning
+claude plugin validate ./pike-rules
 ```
 
 Do not add `--strict` in CI while the no-version strategy above is in effect —
